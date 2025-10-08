@@ -1,0 +1,169 @@
+:root {
+    --text-color: #1a1c20;
+    --background-color: rgb(255, 251, 233);
+    --link-color: #1a1c20;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fraunces';
+    background-color: var(--background-color);
+    padding-top: 80px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+} 
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px; 
+    height: 80px;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 251, 233);  
+    z-index: 1000;     
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .left a {
+    font-size: 36px;
+}
+
+nav .right a {
+    font-size: 25px;
+    margin: 0 4px;
+}
+
+/* MUSIC MIXING SECTION */
+main {
+    font-family: Alegreya;
+    padding: 40px;
+    
+}
+
+.sound-design {
+    text-align: left;
+    
+}
+
+.sound-design p {
+    font-size: 22px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+.thumbnails-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.thumbnail-1, .thumbnail-2, .thumbnail-3, .thumbnail-4 {
+    width: 350px;
+    position: relative;
+}
+
+.thumbnails-row img {
+    width: 100%;
+    height: auto;
+    align-items: ;
+}
+
+
+.thumbnails-row img:hover {
+    opacity: 0.8;
+}
+
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.1s ease;
+    z-index: 2;
+}
+
+
+.thumbnail-1:hover img, .thumbnail-2:hover img, 
+.thumbnail-3:hover img, .thumbnail-4:hover img {
+    opacity: 0.3;
+    transition: 0.3s ease;
+}
+
+.thumbnail-1:hover::before, .thumbnail-2:hover::before,
+.thumbnail-3:hover::before, .thumbnail-4:hover::before {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail-1:hover .hover-text, .thumbnail-2:hover .hover-text,
+.thumbnail-3:hover .hover-text, .thumbnail-4:hover .hover-text {
+    opacity: 1;
+}
+
+
+.icons {
+    display: none;
+}
+
+/* Mobiili */
+@media screen and (max-width: 600px) {
+    .thumbnails-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .thumbnail-1, .thumbnail-2, .thumbnail-3, .thumbnail-4 {
+        width: 400px;
+        
+    }
+    .sound-design {
+    text-align: center;
+    
+}
+    nav .left a {
+    font-size: 20px;
+    text-align: center;
+}
+
+    nav .right a {
+    font-size: 16px;
+    text-align: right;
+    margin: 0 3px;
+    display: none;
+    }
+
+    .sound-design p {
+    font-size: 16px;
+    text-align: left;
+       
+    }
+
+    .icons {
+    display: contents;
+
+}
+}
